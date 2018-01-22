@@ -1,0 +1,16 @@
+#include <stdio.h>
+void main(){
+  int ndigit[10];
+  int nwhite,nother;
+  nwhite=nother=0;
+  int i;
+  char ch;
+  for(i=0;i<10;i++)ndigit[i]=0;
+  while((ch=getchar())!=EOF){
+    if('0'<=ch<='9') ++ndigit[ch-'0']; /*error*/
+    else if(ch=='\n'||ch=='\t'||ch==' ') nwhite++;
+    else nother++;
+  }
+  printf("%d %d",nwhite,nother);
+  for(i=0;i<10;i++)printf("%d\n",ndigit[i]);
+}
