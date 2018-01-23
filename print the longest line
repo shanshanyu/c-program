@@ -15,7 +15,7 @@ while((len=getline(line,MAXLENGTH))>0)
   if(max>0) printf("%s",longest);
   return 0;
 }
-void copy(to[],from[]){                   /*字符数组间复制*/
+void copy(char to[],char from[]){                   /*字符数组间复制*/
   int i=0;
   while((to[i]=from[i])!='\0') i++;       /*复制后再比较*/
 }
