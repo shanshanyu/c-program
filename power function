@@ -1,0 +1,10 @@
+void main(){
+ int power(int base,int n);
+printf(“%d %d\n”,power(2,3),power(2,5));
+}
+int power(int base,int n){
+  int i; /*循环变量*/
+ int p=1;/*保存sum的值*/
+  for(i=1;i<=n;i++) p=p*base;  /*point*/
+  return p;
+}
