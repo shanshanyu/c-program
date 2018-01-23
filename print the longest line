@@ -1,0 +1,32 @@
+#include <stdio.h>
+#define MAXLENGTH 1000
+void copy(to[],from[]);
+int getline(s[],int lim);
+int main(){
+int max=0;
+int len;
+char line[MAXLENGTH];
+char longest[MAXLENGTH];
+while((len=getline(line,MAXLENGTH))>0)
+  if(len>max){
+    len=max;
+    copy(longest,line);
+  }
+  if(max>0) printf("%s",longest);
+  return 0;
+}
+void copy(to[],from[]){                   /*字符数组间复制*/
+  int i=0;
+  while((to[i]=from[i])!='\0') i++;       /*复制后再比较*/
+}
+int getline(char s[],int lim){
+  int i;
+  char c;
+  for(i=0;i<=lim-1&&(c=getchar())!=EOF&&c!='\n';i++)
+    s[i]=c;
+    if(c=='\n') {
+    len=i;
+    }
+    s[i]='\0'
+    return i;
+}
