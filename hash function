@@ -1,0 +1,14 @@
+1.
+#define HASHSIZE 101
+unsigned hash(char *s){
+  unsigned hashval;
+  for(hashval=0;*s!='\0';s++)
+  hashval=hashval+*s*31;
+  return hashval%HASHSIZE;   
+}
+
+2.
+#define HASHSIZE 101
+unsigned hash(char *s){
+
+}
