@@ -1,6 +1,6 @@
 1.
 #define HASHSIZE 101
-unsigned hash(char *s){
+unsigned hash(char *s){  /*指针的好处，在字符数组或字符串内部移动*/
   unsigned hashval;
   for(hashval=0;*s!='\0';s++)
   hashval=hashval+*s*31;
@@ -9,6 +9,10 @@ unsigned hash(char *s){
 
 2.
 #define HASHSIZE 101
-unsigned hash(char *s){
-
+unsigned hash(char s[]){
+  unsigned hashval;
+  int i=0;
+  for(hashval=0;s[i]!='\0';i++)
+  hashval=hashval+s[i]*31;
+  return hashval%HASHSIZE;
 }
