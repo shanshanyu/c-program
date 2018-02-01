@@ -5,7 +5,7 @@ int main(int argc,char *argv[]){
   if(argc==1) filecopy(stdout,stdin);
   else 
   while(--argc>0){
-    if((fp=fopen(*++argv,"rt")==NULL) printf("there is no %s file",*argv);
+    if((fp=fopen(*++argv,"rt"))==NULL) printf("there is no %s file",*argv);
     else {
     filecopy(stdout,fp);
     fclose(fp);
@@ -15,7 +15,7 @@ int main(int argc,char *argv[]){
 }
 void filecopy(FILE *ifp,FILE *ofp){
   int ch;
-  while((ch=getc(ofp)!=EOF)
+  while((ch=getc(ofp))!=EOF)
   putc(ch,ifp);
 }
 
