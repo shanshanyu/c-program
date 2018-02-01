@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main(int argc,char *argv[]){
+  void filecopy(FILE *,FILE *);
+  FILE *fp;
+  if(argc==1) filecopy(stdout,stdin);
+  else 
+  while(--argc>0){
+    if((fp=fopen(*++argv,"rt")==NULL) printf("there is no %s file",*argv);
+    else {
+    filecopy(stdout,fp);
+    fclose(fp);
+    }
+  }
+  return 0;
+}
+void filecopy(FILE *ifp,FILE *ofp){
+  int ch;
+  while((ch=getc(ofp)!=EOF)
+  putc(ch,ifp);
+}
+
+
+
+
+
+/*字符数组间的复制*/
+void copy(char to[],char from[]){
+  int c;
+  while((to[i]=from[i])!='\0') i++;
+  
+}
