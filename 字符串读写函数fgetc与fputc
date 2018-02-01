@@ -1,0 +1,10 @@
+#include <stdio.h>/*字符读写*/
+void main(){
+  FILE *fp;
+  if((fp=fopen("test.txt","wt+"))==NULL) printf("error\n");
+  int ch;
+  while((ch=getchar())!=EOF) fputc(ch,fp);
+  rewind(fp);
+  while((ch=fgetc(fp))!=EOF) putchar(ch);
+  fclose(fp);
+}
