@@ -1,0 +1,20 @@
+#include <stdio.h>
+void bubberSort(int s[],int n);
+void main(){
+  int i;
+  int s[10];
+  printf("input 10 number\n");
+  for(i=0;i<10;i++)  scanf("%d",&s[i]);
+  bubberSort(s,10);
+  for(i=0;i<10;i++)  printf("%d\t",s[i]);
+}
+void bubberSort(int s[],int n){
+  int i,j,temp;
+  for(i=0;i<n-1;i++)
+  for(j=0;j<n-1-i;j++)
+  if(s[j]>s[j+1]){  /*选择把最大的数放到最后还是最小的数放到最后*/
+    temp=s[j];
+    s[j]=s[j+1];
+    s[j+1]=temp;
+  }
+}
