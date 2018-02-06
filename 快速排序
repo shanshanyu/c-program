@@ -1,0 +1,26 @@
+#include <stdio.h>
+void quickSort(int *s,int,int);
+void main(){
+  int i;
+  int s[10];
+  printf("input 6 number\n");
+  for(i=0;i<6;i++)  scanf("%d",&s[i]);
+  quickSort(s,0,5);
+  for(i=0;i<6;i++)  printf("%d\t",s[i]);
+}
+void quickSort(int *s,int left,int right){
+  if(left>=right) return ;
+  int i,j,key;
+  i=left;
+  j=right;
+  key=s[left];
+  while(i<j){   //第一次循环将所有比key大的放到右边，比key小的放到左边，最后i一定等于j，将key赋予s[i]
+    while(i<j&&s[j]>=key) j--;
+    s[i]=s[j];
+    while(i<j&&s[i]<=key) i++;
+    s[j]=s[i];
+  }
+  s[i]=key;
+  quickSort(s,left,i-1);
+  quickSort(s,i+1,right);
+}
