@@ -19,3 +19,17 @@ return 0;
 代码块作用域
 函数原型作用域
 文件作用域
+
+
+#include <stdio.h>
+void main(){
+  int n=10;
+  printf("initial n=%d\n",n);
+  for(int n=1;n<3;n++) printf("loop 1 index n=%d\n",n);  
+  for(int n=1;n<3;n++){
+  printf("loop 2 index n=%d\n",n);
+  int n=30;
+  printf("loop 2 :n=%d\n",n);
+  n++;
+}
+}
