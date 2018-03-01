@@ -1,0 +1,16 @@
+#include <stdio.h>
+int binsearch(int x,int v[],int n){
+  int high;
+  int low;
+  int mid;
+  low=0;
+  high=n-1;
+  while(low<=high){  //这个==不能缺少，用来判断最高或最低
+    mid=(low+high)/2;
+    if(x>v[mid]) low=mid+1;
+    else if(x<[mid]) high=mid-1;
+    else return mid;
+  }
+  return -1;
+  
+}
