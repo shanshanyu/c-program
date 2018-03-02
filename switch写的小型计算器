@@ -1,0 +1,14 @@
+#include <stdio.h>
+void main(){
+  int a,b;
+  char c;
+  printf("input a expression,for example:a+b\n");
+  scanf("%d%c%d",&a,&c,&b);
+  switch(c){
+    case'+':printf("%d",a+b);break;
+    case'-':printf("%d",a-b);break;
+    case'*':printf("%d",a*b);break;
+    case'/':printf("%d",a/b);break;
+    default:printf("input error\n");
+  }
+}
