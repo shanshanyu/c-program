@@ -1,0 +1,11 @@
+#include <ctype.h>
+int atoi(char s[]){
+  int i,j,sign;
+  for(i=0;isspace(s[i]);i++) ;  //跳过空白符
+  sign=(s[i]=='-')?-1:1;
+  if(s[i]=='-'||s[i]=='+') i++;  //跳过正负号
+  for(j=0;isdigit(s[i]);i++)
+    j=j*10+(s[i]-'0');  
+    return sign*j;
+
+}
