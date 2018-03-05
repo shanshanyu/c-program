@@ -1,0 +1,16 @@
+1.
+for(i=1;i<n;i++){
+  temp=s[i];
+  for(j=i-1;j>-1&&s[j]>temp;j--) s[j+1]=s[j];
+  s[j+1]=temp;
+  }
+  
+2.
+for(i=1;i<n;i++)
+for(j=i-1;j>-1&&s[j]>s[j+1];j--){
+temp=s[j+1];
+s[j+1]=s[j];
+s[j]=temp;
+}
+
+这两种方式实现的效果是一样的，一个是插入，一个是交换。
