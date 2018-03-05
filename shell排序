@@ -1,0 +1,24 @@
+#include <stdio.h>
+void shellSort(int *,int n);
+void main(){
+    int s[10];
+    int i;
+    printf("input 10 number\n");
+    for(i=0;i<10;i++)scanf("%d",&s[i]);
+    shellSort(s,10);
+    for(i=0;i<10;i++)printf("%d\t",s[i]);
+
+}
+
+void shellSort(int *s,int n){
+    int i,j,gap;
+    int temp;
+    for(gap=n/2;gap>=1;gap=gap/2)  //最外层的for语句控制两个被比较元素之间的距离
+    for(i=gap;i<n;i++)   //中间层for循环用于在元素间移动位置
+    for(j=i-gap;j>-1&&s[j]>s[j+gap];j-=gap){
+        temp=s[j+gap];
+        s[j+gap]=s[j];
+        s[j]=temp;
+    }
+
+}
