@@ -1,0 +1,10 @@
+#include <stdio.h>
+void main(){
+  int a,b,c;
+  printf("input 3 number\n");
+  scanf("%d %d %d",&a,&b,&c);
+  if(a+b>c&&a+c>b&&b+c>a) printf("ok\n");
+  else printf("no\n");
+}
+
+充要条件：任意两边之和大于第三边   或   任意两边只差小于第三边
