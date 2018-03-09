@@ -1,0 +1,13 @@
+char *strcpy(char *strDes,char *strSrc){
+  if(strDes==NULL||strSrc==NULL) printf("invalid arguments\n");
+  char *strDesCpy=strDes;
+  while((*strDes++=*strSrc++)!='\0') ;
+  return strDesCpy;
+}
+
+
+
+void copy(char to[],char from[]){     //这个函数没有返回值
+  int i;
+  while((to[i]=from[i])!='\0') i++;   //while((to[i]=from[i++])!='\0') ;
+}
