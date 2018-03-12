@@ -1,0 +1,5 @@
+size_t strlen(const char *str){  //size_t宏定义在stdio.h中
+  size_t length=0;
+  while(*str++) length++;    //返回的长度不包括字符串结尾的'\0'
+  return length;
+}
