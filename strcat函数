@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+void main(){
+}
+char *strcat(char *strDes,const char *strSrc){
+  if(strDes==NULL||strSrc==NULL) {
+    printf("error\n");
+    exit(-1);
+  }
+  char *tmp=strDes;   //直接返回strDes有问题，字符指针的问题
+  while(*strDes) strDes++;
+  while((*strDes++=*strSrc++)!='\0') ;
+  return tmp;
+}
