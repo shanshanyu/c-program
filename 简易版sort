@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <string.h>
+#define MAXLEN 1000
+#define MAXLINES 100
+#define ALLOCSIZE 100000
+char allocbuf[ALLOCSIZE];
+char *allocp=allocbuf;    //这两个定义不能放到alloc函数中，需要定义成全局变量
+void quickSort(char *lineptr[],int,int);
+int readLines(char *lineptr[],int);
+void writeLines(char *lineptr[],int);
+int getLine(char *s,int lim){
+  int i;
+  char c;
+  for(i=0;i<lim-1&&(c=getchar())!=EOF&&c!='\n';i++) s[i]=c;
+  if(c=='\n') s[i++]='\n';
+  s[i]='\0';
+  return i;
+}
+char *alloc(int n){
+  if(allocbuf+MAXLEN-allocp>n) {
+  allocp+=n;
+  return allocp-n;
+} else return 0;
+}
+void main(){
+ char *lineptr[MAXLINES];
+ int nlines=0;
+ if((nlines=readLines(lineptr,MAXLINES))>0)  {
+ quickSort(lineptr,0,nlines-1);
+ writeLines(lineptr,nlines);
+}
+ else printf("too many lines or characters");
+}
+int readLines(char *lineptr[],int maxlines){  //读取所有的行并将指针放入lineptr的指针数组中
+  int len,nlines;
+  len=nlines=0;
+  char *p,line[MAXLEN];
+  while((len=getLine(line,MAXLEN))>0) {
+  if(nlines>maxlines||(p=alloc(len))==NULL) return -1;
+  else {
+  line[len-1]='\0';
+  strcpy(p,line);
+  lineptr[nlines++]=p;
+}
+}
+  return nlines;
+}
+void writeLines(char *lineptr[],int lines){
+   while(lines-->0) printf("%s\n",*lineptr++);
+}
+void quickSort(char *lineptr[],int left,int right){  //快速排序
+  if(left>=right) return ;
+  int i,j;
+  char *temp;
+  i=left;
+  j=right;
+  temp=lineptr[left];        //此处需要用left
+  while(i<j){
+  while(i<j&&strcmp(lineptr[j],temp)>=0) j--;  
+  lineptr[i]=lineptr[j];
+  while(i<j&&strcmp(lineptr[i],temp)<=0) i++;
+  lineptr[j]=lineptr[i];
+}
+  lineptr[i]=temp;
+  quickSort(lineptr,left,i-1);
+  quickSort(lineptr,i+1,right);
+}
+
