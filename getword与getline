@@ -1,0 +1,38 @@
+int getline(char *s,int lim){  //通过getchar读取字符写入到字符数组中，并返回字符数组的长度，该长度包括结尾'\n'
+  int i;
+  char c;
+  for(i=0;i<lim-1&&(c=getchar())!=EOF&&c!='\n';i++) s[i]=c;
+  if(c=='\n') s[i++]='\n';
+  s[i]='\0';
+}
+
+
+
+
+
+#define BUFSIZE 100
+char buf[BUFSIZE];
+int bufp=0;
+int getch(){
+  return (bufp>0)?buf[--bufp]:getchar();
+}
+void ungetch(char c){
+  if(bufp>=BUFSIZE) printf("ungetch:too many characters\n");
+  else buf[bufp++]=c;
+}
+int getch(char *word,int lim){  
+  char *w=word;
+  while(isspace(c=getch())) ;
+  if(c!=EOF) *w++=c;  //如果字符不是EOF，那么将这个字符写入到字符数组中
+  if(!isalpha(c)){    //如果输入的字符不是字母，输入字符串结束符，返回字符
+    *w='\0';
+    return c;
+  }
+  for(;--lim>0;w++)   //循环体一共能执行lim-1次，  1->lim-1
+  if(!isalnum(*w=getch())){  //if(isalnum(*w=getch())) ; else {ungetch(*w);break;};
+    ungetch(*w);
+    break;
+  }
+  *w='\0';
+  return word[0];
+}
