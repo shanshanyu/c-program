@@ -1,0 +1,9 @@
+int main(){
+  int c;  //为什么要用int c，而不是char c   c需要用来存放EOF,EOF为整型
+  while((c=getchar())!=EOF) putchar(c);
+  return 0;
+}
+
+int getchar();
+
+int putchar(int c);
