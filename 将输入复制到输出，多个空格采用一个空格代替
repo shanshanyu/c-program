@@ -1,0 +1,35 @@
+#include <stdio.h>
+#define NONBLANK 'a'
+int main(){
+  int c,lastc;
+  lastc=NONBLANK;
+  while((c=getchar())!=EOF){
+  if (c!=' ') putchar(c);
+  else
+  if(lastc!=' ') putchar(c);
+  lastc=c;
+  }
+  return 0;
+}
+
+int main(){
+  int c,lastc;
+  while((c=getchar())!=EOF){
+    if(c!=' ') putchar(c);
+    else if(lastc!=' ') putchar(c);
+    lastc=c;
+  }
+  return 0;
+}
+
+int main(){
+  int c,lastc;
+  while((c=getchar())!=EOF){
+    if(c!=' '||lastc!=' ')
+    putchar(c);
+    lastc=c;
+  }
+}
+//如果是空格，判断上一个字符是否是空格，如果不是空格则输出，
+
+//用了 if..else     if  else if    if
