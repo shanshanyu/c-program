@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){
+  int a;
+  short b;
+  long c;
+  long  long d;
+  printf("%d %d %d %d",sizeof(a),sizeof(b),sizeof(c),sizeof(d));
+
+}
+64位windows下输出：  4  2 4  8
+64位linux下输出：4  2  8  8
