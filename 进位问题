@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+	char a = 127;
+	a = a + 5;
+	unsigned char b = 255;
+	b = 255 + 5;
+	printf("a=%d,b=%d\n", a, b);
+}
+
+a=-124,b=4
+//看最高位是符号位还是数据位
