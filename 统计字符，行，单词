@@ -1,0 +1,22 @@
+#include <stdio.h>
+#define IN 1
+#define OUT 0
+int main(){
+  int nc,nl,nw,c;
+  int state;
+  nc=nl=nw=0;
+  state=OUT;
+  while((c=getchar())!=EOF){
+    nc++;
+    if(c=='\n') nl++;
+    if(c=='\n'||c=='\t'||c==' ')
+    state=OUT;
+    else if(state==OUT) {
+      nw++;
+      state=IN;
+    }
+  }
+ return 0; 
+}
+
+//判断上一个字符是否是空白符
