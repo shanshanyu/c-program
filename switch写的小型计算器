@@ -28,5 +28,5 @@ int main(){
   }
 }
 
- //default语句如果放在前面需要加上break
+ //default语句后面也要加上break
  //不能缺少对除数0的判断
