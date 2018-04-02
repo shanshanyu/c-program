@@ -1,0 +1,11 @@
+break语句通常用在循环语句和开关语句中。
+当break用于开关语句switch中时，可使程序跳出switch而执行switch以后的语句。
+当break用于do-while、for、while语句中，可使程序终止循环。通常break与if语句连用。
+
+break语句对if-else的条件不起作用。
+多层循环，一个break只能跳出一层。
+
+
+
+continue语句的作用是跳出循环体中剩余的语句而强行执行下一次循环。
+continue语句只用于for、while、do-while等循环体中，常与if语句连用。
