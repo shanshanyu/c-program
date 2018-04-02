@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){    //这个6可以为任意值
+  int i,j,k;
+  for(i=0;i<6;i++){   //控制行数
+    for(k=0;k<6-i;k++)  //控制每行的空格数
+    printf(" ");
+    for(j=0;j<(2*i+1);j++)  //控制每行的*个数
+    printf("*");
+    printf("\n");
+  }
+}
