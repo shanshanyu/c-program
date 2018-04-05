@@ -1,0 +1,18 @@
+#include <stdio.h>
+#define IN 1
+#define OUT 0
+int main(){
+  int nc,nw,nl;
+  int c;
+  nc=nw=nl=0;
+  int status=OUT;
+  while((c=getchar())!=EOF){
+    nc++;
+    if(c=='\n') nl++;
+    if(c=='\n'||c=='\t'||c==' ') status=OUT;  //表示上一个字符是空白符，但是这次的不是，用 if ..else if
+    else if(status==OUT){
+      status=IN;
+      nw++;
+    }
+  }
+}
