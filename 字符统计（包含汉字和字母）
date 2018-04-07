@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+  char s[]="你好abcd";
+  int i;
+  int len=0;
+  for(i=0;s[i];i++) //一个移动，一个进位
+    if(s[i]<0){
+      len++;
+      i++;
+    }else len++;
+  printf("%d\n",len);
+  return 0;
+}
