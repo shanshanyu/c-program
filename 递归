@@ -1,0 +1,9 @@
+#include <stdio.h>  //一个结束条件，一个关系
+int age(n){
+  if(n==1) return 10;
+  else
+  return age(n-1)+2;
+}
+int main(){
+  
+}
