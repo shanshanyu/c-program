@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+    int i,sum;
+    i=1;
+    sum=0;
+    /*while(i<=100){
+        sum+=i;
+        i++;
+    }*/
+    do{
+        sum+=i;
+        i++;
+    }while(i<=100);
+    printf("%d\n",sum);
+    return 0;
+}
+
+//while比do..while多一个第一次的判断，其他的完全一致
