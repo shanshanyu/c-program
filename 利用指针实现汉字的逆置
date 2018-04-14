@@ -1,0 +1,32 @@
+void reverse(char *s){
+      char *str_start=&s[0];
+      char *str_end=&s[strlen(s)-1];
+      char temp;
+      while(str_start<str_end){
+            temp=*str_start;
+            *str_start=*(str_end-1);
+            *(str_end-1)=temp;
+            temp=*(str_start+1);
+            *(str_start+1)=*str_end;
+            *str_end=temp;
+            str_start+=2;
+            str_end-=2;
+      }
+}
+
+
+
+void reverse(char *s){
+      short *str_start=&s[0];
+      short *str_end=&s[strlen(s)-2];
+      short temp;
+      while(str_start<str_end){
+            temp=*str_start;
+            *str_start=*(str_end-1);
+            *(str_end-1)=temp;
+            str_start++;
+            str_end--;
+      }
+}
+
+//一个汉字2个字节，一个short也是2个字节。利用short类型的指针刚好可以实现
