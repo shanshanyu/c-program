@@ -1,0 +1,15 @@
+#include <stdio.h>
+int second_f(int *s,int n){
+  int i;
+  int max=*s;
+  int s_max=*(s+1);
+  for(i=1;i<n;i++)
+  if(max<*(s+i)){
+    s_max=max;  //能保证s_max比max小
+    max=*(s+i);
+  }
+  else if(s_max<*(s+i)) s_max=*(s+i);
+  return s_max;
+}
+
+//if能保证s_max始终比max小，else if表示在if的前提下，出现比s_max大的元素
