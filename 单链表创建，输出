@@ -1,0 +1,26 @@
+struct stu{
+  int num;
+  int age;
+  struct stu *next;
+};
+struct stu *create(int n){
+  struct stu *pf,*pb,*head;
+  int i;
+  for(i=0;i<n;i++){
+    printf("input num and age\n");
+    pb=(struct stu*)malloc(sizeof(struct stu));
+    scanf("%d%d",&pb->num,&pb->age);
+    if(i==0)head=pf=pb;  //point
+    else pf->next=pb;
+      pb->next=NULL;
+      pf=pb;
+  }
+  return head; 
+}
+
+void print_chain(struct stu *p){
+  while(p){
+    printf("%d %d\n",p->num,p->age);
+    p=p->next;
+  }
+}
