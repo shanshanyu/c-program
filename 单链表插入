@@ -1,0 +1,41 @@
+#define FALSE 1
+#define TRUE 0
+typdedef struct node{
+  int n;
+  struct node *next;
+}NODE;
+int sll_insert(NODE **rootp,int n){
+  NODE *current,*previous,*new;
+  current=*rootp;
+  previous=new=NULL;
+  while(current!=NULL&&current->n<n){
+    previous=current;
+    current=current->next;
+  }
+  new=malloc(sizeof(NODE));
+  if(new==NULL)return FALSE;
+  new->next=current;
+  new->n=n;
+  if(previous==NULL) *rootp=new;
+  else previous->next=new;
+  return TRUE;
+}
+
+
+
+int sll_insert(NODE **nextp, int n) {
+	NODE *current,*new;
+	new = NULL;
+	/*current = *nextp;
+	while (current != NULL && current->n < n) {
+		nextp = &current->next;
+		current = *nextp;
+	}*/
+  while((current=*nextp)!=NULL&&current->n<n) nextp=&current->next;
+	new = malloc(sizeof(NODE));
+	if (new == NULL) return 0;
+	new->next = current;
+	new->n = n;
+	*nextp = new;
+	return 1;
+}
