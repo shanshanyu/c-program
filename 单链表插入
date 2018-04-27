@@ -26,9 +26,9 @@ int sll_insert(NODE **rootp,int n){
 int sll_insert(NODE **nextp, int n) {
 	NODE *current,*new;
 	new = NULL;
-	/*current = *nextp;
+	/*current = *nextp
 	while (current != NULL && current->n < n) {
-		nextp = &current->next;
+		nextp = &current->next;  //不能改为*nextp=current->next;current=*nextp;这样做等于更改了根指针，不能更改*nextp的值
 		current = *nextp;
 	}*/
   while((current=*nextp)!=NULL&&current->n<n) nextp=&current->next;
