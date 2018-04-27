@@ -1,0 +1,17 @@
+int dll_insert(NODE *rootp, int n) {
+	NODE *this, *next, *new;
+	next = new = NULL;
+	for (this = rootp;next = this->fwd;this = next) {
+		if (next->n == n) return 1;
+		if (n < next->n)break;
+	}
+	new = malloc(struct (NODE));
+	if (new == NULL)return -1;
+	this->fwd = new;
+	new->fwd = next;
+	if (next != NULL) next->bwd = new;
+	else rootp->bwd = new;
+	if (this != rootp) new->bwd = this;
+	else new->bwd = NULL;
+	return 0;
+}
