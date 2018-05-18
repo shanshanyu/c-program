@@ -3,7 +3,7 @@ struct stu{
   int age;
   struct stu *next;
 };
-struct stu *create(int n){
+struct stu *create(int n){  // 没有使用头结点，第一个节点要特殊化处理，利用的是尾插法
   struct stu *pf,*pb,*head;
   int i;
   for(i=0;i<n;i++){
